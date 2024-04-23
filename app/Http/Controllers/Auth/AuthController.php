@@ -42,7 +42,7 @@ class AuthController extends Controller
             return response()
             ->json([
                 'message' => 'Invalid credentials'
-            ],Response::HTTP_UNAUTHORIZED);
+            ], Response::HTTP_UNAUTHORIZED);
         }
 
         $user = Auth::user();
@@ -52,7 +52,7 @@ class AuthController extends Controller
                 'user' => $user,
                 'access_token' => $token,
                 'token_type' => 'Bearer',
-            ],Response::HTTP_OK);
+            ], Response::HTTP_OK);
     }
 
     public function logout()
