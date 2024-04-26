@@ -33,7 +33,7 @@ class ResetPasswordController extends Controller
         ], Response::HTTP_OK);
     }
 
-    public function sendLinkResetPassword(LinkEmailRequest $request)
+    public function sendLinkResetPassword(LinkEmailRequest $request) //TODO Ver como asignarle un link temporal que sea del front y que esa ruta apunte a mi reset-password-mail
     {
         $url = URL::temporarySignedRoute('user.reset-password-mail',
             now()->addMinutes(10), ['email' => $request->email]);
